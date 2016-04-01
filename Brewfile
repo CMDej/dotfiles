@@ -15,6 +15,7 @@ brew 'spaceman-diff'
 brew 'spark'
 brew 'unrar'
 brew 'wget'
+brew 'zsh'
 
 cask 'google-chrome'
 cask 'vlc'
