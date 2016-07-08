@@ -75,3 +75,6 @@ set-option -g display-panes-colour colour214 #orange
 
 # clock
 set-window-option -g clock-mode-colour colour214 #green
+
+# reatach to user (used for open function on Mac)
+if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'

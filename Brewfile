@@ -21,6 +21,7 @@ brew 'vim'
 brew 'watch'
 brew 'python'
 brew 'mysql'
+brew 'reattach-to-user-namespace'
 
 cask 'google-chrome'
 cask 'vlc'
