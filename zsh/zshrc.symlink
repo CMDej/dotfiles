@@ -39,3 +39,12 @@ do
 done
 
 unset config_files
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/CM/usr/bin/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/CM/usr/bin/google-cloud-sdk/completion.zsh.inc'
+
+# The next line updates PATH for the Google Cloud SDK.
+export PYTHONPATH=/Users/CM/usr/bin/google-cloud-sdk/platform/google_appengine:$PYTHONPATH

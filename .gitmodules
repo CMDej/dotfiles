@@ -1,0 +1,18 @@
+[submodule "vim.symlink/bundle/vim-airline"]
+	path = vim.symlink/bundle/vim-airline
+	url = git@github.com:vim-airline/vim-airline.git
+[submodule "vim.symlink/bundle/vim-gitgutter"]
+	path = vim.symlink/bundle/vim-gitgutter
+	url = git@github.com:airblade/vim-gitgutter.git
+[submodule "vim.symlink/bundle/ctrlp"]
+	path = vim.symlink/bundle/ctrlp
+	url = git@github.com:kien/ctrlp.vim.git
+[submodule "vim.symlink/bundle/supertab"]
+	path = vim.symlink/bundle/supertab
+	url = git@github.com:ervandew/supertab.git
+[submodule "vim.symlink/bundle/jedi-vim"]
+	path = vim.symlink/bundle/jedi-vim
+	url = git@github.com:davidhalter/jedi-vim.git
+[submodule "vim.symlink/bundle/vim-airline-themes"]
+	path = vim.symlink/bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes.git
