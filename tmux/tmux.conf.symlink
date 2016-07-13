@@ -1,6 +1,3 @@
-# use UTF8
-set -g utf8
-set-window-option -g utf8 on
 set-window-option -g mode-keys vi
 
 # Add vim copy/paste style to tmux
@@ -76,5 +73,17 @@ set-option -g display-panes-colour colour214 #orange
 # clock
 set-window-option -g clock-mode-colour colour214 #green
 
-# reatach to user (used for open function on Mac)
-if-shell 'test "$(uname)" = "Darwin"' 'source ~/.tmux-osx.conf'
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'christoomey/vim-tmux-navigator'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'
