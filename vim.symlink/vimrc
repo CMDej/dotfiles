@@ -16,24 +16,13 @@ set guioptions-=T
 set guioptions-=r
 set guioptions-=L
 
-let g:netrw_liststyle=3
-
 syntax enable
 set guifont=Inconsolata-dz\ for\ Powerline\ Medium\ 10
 colorscheme hybrid
 
-execute pathogen#infect()
+let g:netrw_liststyle=3
+
 filetype plugin indent on
-
-" Highlights characters over position 79 in line
-highlight OverLength ctermbg=237 guibg=#3a3a3a
-match OverLength /\%80v.\+/
-
-" Configure vim airline
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_close_button=0
-let g:airline_theme="powerlineish"
 
 let mapleader = "_"
 let maplocalleader = ","
@@ -54,10 +43,32 @@ vnoremap <leader>' <esc>`<i'<esc>`>a'<esc>
 :iabbrev ccopy Copyright 2016 Charles-Marie Dejardin, all rights reserved.
 :iabbrev ssig --<cr>Charles-Marie Dejardin<cr>charles.dejardin@gmail.com
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" Highlights characters over position 79 in line
+highlight OverLength ctermbg=237 guibg=#3a3a3a
+match OverLength /\%80v.\+/
+
+" execute pathogen#infect()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'kien/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
+" Configure vim airline
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#show_close_button=0
+let g:airline_theme="powerlineish"
 
 " Python-mode
 " Activate rope
