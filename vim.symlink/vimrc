@@ -47,7 +47,6 @@ vnoremap <leader>' <esc>`<i'<esc>`>a'<esc>
 highlight OverLength ctermbg=237 guibg=#3a3a3a
 match OverLength /\%80v.\+/
 
-" execute pathogen#infect()
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -55,13 +54,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'airblade/vim-gitgutter'
 Plug 'kien/ctrlp.vim'
-Plug 'ervandew/supertab'
-Plug 'davidhalter/jedi-vim'
+Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Valloric/YouCompleteMe'
 call plug#end()
 
 " Configure vim airline
@@ -69,6 +67,9 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_close_button=0
 let g:airline_theme="powerlineish"
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Python-mode
 " Activate rope

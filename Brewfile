@@ -22,6 +22,7 @@ brew 'watch'
 brew 'python'
 brew 'mysql'
 brew 'reattach-to-user-namespace'
+brew 'cmake'
 
 cask 'google-chrome'
 cask 'vlc'
