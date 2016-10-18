@@ -55,7 +55,7 @@ set-window-option -g clock-mode-colour colour214 #green
 # pomodoro status bar
 set-option -g status-right '#(cat ~/.thyme-tmux)'
 set-option -g status-interval 1
-bind o command-prompt -p "Timer type? p: pomodoro; b: break; l: long break; m <mins>: custom minutes; o: reset status bar -" "run -b 'thyme -d %1 %2'"
+bind o command-prompt -p "Timer type? p: pomodoro; b: break; l: long break; m <mins>: custom minutes; o: reset status bar -" "run -b 'thyme -d %2 %2'"
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -67,10 +67,8 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'christoomey/vim-tmux-navigator'
 
-# Other examples:
-# set -g @plugin 'github_username/plugin_name'
-# set -g @plugin 'git@github.com/user/plugin'
-# set -g @plugin 'git@bitbucket.com/user/plugin'
+# vim restoration with resurrect
+set -g @resurrect-strategy-vim 'session'
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
