@@ -4,14 +4,14 @@
 [hub]
         protocol = https
 [alias]
-        co = checkout
+    co = checkout
 	ci = commit -m
 	ca = commit --amend
 	st = status
 	ls = status
 	mg = merge --no-ff --no-edit
 	lg = log --oneline --graph --decorate
-	lga = log --oneline --graph --decorate --all
+	lga = log --graph --decorate --all --pretty=format:'%C(136)%h %C(32)~ %C(248)%cn: %s %C(32)~ %C(248)%cd %C(32)/ %C(28)%cr%C(26)%d' --date=short
 	dc = diff --cached
 	rb = rebase --preserve-merges
 	rbi = rebase --preserve-merges -i
