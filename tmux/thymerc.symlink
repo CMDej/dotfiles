@@ -1,0 +1,34 @@
+set :tmux, true
+
+option :p, :pomodoro, 'start a pomodoro' do
+  run
+end
+
+option :b, :break, 'start a break' do
+  set :timer, 5*60
+  run
+end
+
+option :l, :long_break, 'start a long break' do
+  set :timer, 10*60
+  run
+end
+
+option :m, 'minutes num', 'run with custom minutes' do |num|
+  @timer = num.to_i * 60
+  run
+end
+
+before do
+  `tmux set-option -g status-bg colour235`
+end
+
+after do |seconds_left|
+  if @tmux
+    `tmux set-option -g status-bg magenta`
+  end
+end
+
+option :o, :reset, 'reset status bar' do
+  `tmux set-option -g status-bg colour235`
+end
